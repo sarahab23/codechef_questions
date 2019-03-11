@@ -1,0 +1,70 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,T,N[200],x,y=6,j,c=0,d=0,a=0,b=0,z,k,m,w,l;
+	cin>>T;
+	for(i=0;i<T;i++)
+	{
+		cin>>N[i];
+	}
+	for(i=0;i<T;i++)
+	{
+	   if(N[i]>=12)
+	   {
+	       for(x=N[i]-6;x>=1;x--)
+		   {
+		      y=N[i]-x;
+		      for(j=1;j<=y;j++)
+		      {
+		          if((y%j)==0)
+		          {
+		              for(l=1;l<=j;l++)
+                      {
+                         z=y/j;
+                         if((j%l)==0)
+                         {c++;}
+                         if((z%l)==0)
+                         {d++;}
+                         if((c<=1)&&(d<=1))
+                          {
+                            for(k=1;k<=x;k++)
+		                     {
+                                 if((x%k)==0)
+                                 {
+                                     for(m=1;m<=k;m++)
+                                     {
+                                        w=x/k;
+                                        if((k%m)==0)
+                                        {
+                                        a++;
+                                        }
+                                        if((w%m)==0)
+                                        {
+                                        b++;
+                                        }
+                                        if((a<=1)&&(b<=1))
+                                        {
+                                        cout<<"YES"<<endl;
+                                        }
+
+                                      }
+                                  }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+                          }
+                      }
+                }
+            }
+         }
+     }
+		else
+		{
+			cout<<"NO"<<endl;
+		}
+    }
+	return 0;
+}
